@@ -1,15 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./assets/scss/globals.scss";
+import { SWRConfig } from "swr";
+import { ChatProvider } from "./contexts/ChatContext";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <SWRConfig value={{}}>
+      <ChatProvider>
+        <App />
+      </ChatProvider>
+    </SWRConfig>
   </React.StrictMode>
 );
 

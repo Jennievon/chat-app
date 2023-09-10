@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { User } from "../interfaces";
+import { USER_ID } from "../utils/constants";
 
 interface GroupConversationModalProps {
   closeModal: () => void;
@@ -16,12 +17,16 @@ const GroupConversationModal: React.FC<GroupConversationModalProps> = ({
   const [selectedUsers, setSelectedUsers] = useState<string[]>([]);
 
   const toggleUserSelection = (id: string) => {
-    if (selectedUsers.includes(id)) {
-      setSelectedUsers(
-        selectedUsers.filter((selectedUser) => selectedUser !== id)
-      );
+    if (+id === +USER_ID) {
+      return alert("You cannot add yourself to a group conversation.");
     } else {
-      setSelectedUsers([...selectedUsers, id]);
+      if (selectedUsers.includes(id)) {
+        setSelectedUsers(
+          selectedUsers.filter((selectedUser) => selectedUser !== id)
+        );
+      } else {
+        setSelectedUsers([...selectedUsers, id]);
+      }
     }
   };
 

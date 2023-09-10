@@ -8,6 +8,8 @@ import { useChat } from "../contexts/ChatContext";
 import { Conversation, SelectedType, User } from "../interfaces";
 import EmptyState from "./EmptyState";
 import GroupConversationModal from "./GroupConversationModal";
+import { apiRoutes } from "../api/apiRoutes";
+import { mutate } from "swr";
 import { USER_ID } from "../utils/constants";
 
 const UserList = () => {
@@ -31,12 +33,13 @@ const UserList = () => {
     selectedUsers: string[]
   ) => {
     if (conversationData) {
-      const id = (conversationData?.data?.length + 1).toString();
+      const id = USER_ID;
       const data = {
         user_ids: selectedUsers,
         name: groupName,
       };
       createConversation(id, data);
+      mutate(apiRoutes.conversations);
       setShowModal(false);
     }
   };

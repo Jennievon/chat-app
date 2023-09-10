@@ -10,7 +10,6 @@ const axiosInstance = axios.create({
   },
 });
 
-// SWR fetcher function
 const fetcher = async <Data>(url: string): Promise<Data> => {
   try {
     const response: AxiosResponse<Data> = await axiosInstance.get(url);

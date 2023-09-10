@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   createConversation,
   useConversationListing,
@@ -8,7 +8,7 @@ import { useChat } from "../contexts/ChatContext";
 import { Conversation, SelectedType, User } from "../interfaces";
 import EmptyState from "./EmptyState";
 import GroupConversationModal from "./GroupConversationModal";
-import { USER_ID } from "../utils";
+import { USER_ID } from "../utils/constants";
 
 const UserList = () => {
   const {

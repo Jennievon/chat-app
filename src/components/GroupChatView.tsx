@@ -6,9 +6,10 @@ import {
   useConversationRead,
 } from "../api/chat";
 import { Message, User } from "../interfaces";
-import { USER_ID, formatTimestamp } from "../utils";
+import { formatTimestamp } from "../utils";
 import { mutate } from "swr";
 import { apiRoutes } from "../api/apiRoutes";
+import { USER_ID } from "../utils/constants";
 
 const GroupChatView = () => {
   const { selectedConversation } = useChat();

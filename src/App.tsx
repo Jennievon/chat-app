@@ -2,7 +2,7 @@ import React from "react";
 import { useChat } from "./contexts/ChatContext";
 import ConversationView from "./components/ConversationView";
 import Login from "./components/Login";
-import UserList from "./components/UserList/UserList";
+import UserList from "./components/UserList";
 import EmptyState from "./components/EmptyState";
 import GroupChatView from "./components/GroupChatView";
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useChat } from "../contexts/ChatContext";
-import { USER_ID, setToLocalStorage } from "../utils";
+import { setToLocalStorage } from "../utils";
+import { USER_ID } from "../utils/constants";
 
 function Login() {
   const { setUser } = useChat();

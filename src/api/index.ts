@@ -1,14 +1,12 @@
 import axios, { AxiosResponse } from "axios";
 import useSWR, { SWRResponse, mutate } from "swr";
-
-const API_BASE_URL = "https://assignment.bunq.com/api";
-const token = "eWVWQpOXowD5Tem3fgiSaS6ZZRumks4d";
+import { API_BASE_URL, API_TOKEN } from "../utils/constants";
 
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,
   headers: {
-    Authorization: `Bearer ${token}`,
+    Authorization: `Bearer ${API_TOKEN}`,
   },
 });
 

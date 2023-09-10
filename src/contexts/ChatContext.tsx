@@ -6,6 +6,7 @@ import {
   SelectedType,
   User,
 } from "../interfaces";
+import { removeFromLocalStorage } from "../utils";
 
 interface ChatContextProps {
   children: ReactNode;
@@ -47,6 +48,11 @@ export const ChatProvider: React.FC<ChatContextProps> = ({ children }) => {
     setSelected(SelectedType.GROUP);
   };
 
+  const logout = () => {
+    removeFromLocalStorage("user");
+    setUser(null);
+  };
+
   const value: ChatContextValue = {
     user,
     setUser,
@@ -55,6 +61,7 @@ export const ChatProvider: React.FC<ChatContextProps> = ({ children }) => {
     selectedConversation,
     handleCreateConversation,
     handleCreateGroupConversation,
+    logout,
   };
 
   return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;

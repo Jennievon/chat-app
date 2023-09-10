@@ -44,6 +44,23 @@ ul {
   color: var(--light-color);
   padding: 20px;
   height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
 }
 
 .App-container {

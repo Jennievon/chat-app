@@ -6,6 +6,7 @@ interface ChatContextValue {
   selectedConversation: Conversation | null;
   handleCreateConversation: (user: User) => void;
   handleCreateGroupConversation: (group: Conversation) => void;
+  logout: () => void;
 }
 
 export enum SelectedType {

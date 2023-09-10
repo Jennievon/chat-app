@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useChat } from "../contexts/ChatContext";
 import { USER_ID, setToLocalStorage } from "../utils";
 

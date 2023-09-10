@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useChat } from "../contexts/ChatContext";
 import {
   useGroupMessageListing,
@@ -44,6 +44,7 @@ const GroupChatView = () => {
       createMessage(USER_ID, conversation.data.id, { text: message })
         .then(() => {
           mutate(apiRoutes.conversation(USER_ID, conversation.data.id));
+          mutate(apiRoutes.conversations(USER_ID));
           setNewMessage(null);
         })
         .catch((error: any) => {

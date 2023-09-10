@@ -2,17 +2,28 @@ import React from "react";
 import { useChat } from "./contexts/ChatContext";
 import ConversationView from "./components/ConversationView";
 import Login from "./components/Login";
-import UserList from "./components/UserList";
+import UserList from "./components/UserList/UserList";
 import EmptyState from "./components/EmptyState";
 import GroupChatView from "./components/GroupChatView";
 
 function App() {
-  const { user, selected } = useChat();
+  const { user, selected, logout } = useChat();
+
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>React Chat App</h1>
+        <div className="header-content">
+          <h1>React Chat App</h1>
+        </div>
+        {user && (
+          <button className="button" onClick={handleLogout}>
+            Logout
+          </button>
+        )}
       </header>
       <main>
         <div className="App-container">

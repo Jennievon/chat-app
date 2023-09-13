@@ -74,10 +74,10 @@ const UserList = () => {
                   onClick={() => handleCreateGroupConversation(conversation)}
                 >
                   <div className="group-avatar">
-                    {conversation.name.charAt(0)}
+                    {conversation?.name?.charAt(0)}
                   </div>
                   <div className="info">
-                    <span className="user-name">{conversation.name}</span>
+                    <span className="user-name">{conversation?.name}</span>
                     <p className="last-message">
                       {conversation?.last_message?.text?.substring(0, 20) ||
                         "No messages yet"}
@@ -96,9 +96,9 @@ const UserList = () => {
                   }
                   onClick={() => handleCreateConversation(user)}
                 >
-                  <div className="user-avatar">{user.name.charAt(0)}</div>
+                  <div className="user-avatar">{user?.name?.charAt(0)}</div>
                   <div className="info">
-                    <span className="user-name">{user.name}</span>
+                    <span className="user-name">{user?.name}</span>
                   </div>
                 </li>
               ))}
